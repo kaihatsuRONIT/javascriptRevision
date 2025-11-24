@@ -1,7 +1,7 @@
-//primitive
+//primitive (stored in stack mem)
 //String,Number,bigint,symbol,boolean,null,undefined
 
-//non primitive
+//non primitive (stored in heap mem)
 //arrays,objects,functions
 
 const nums = ["hello","world"]
