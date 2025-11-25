@@ -19,4 +19,6 @@ console.log(url.concat(["Kaihatsu","RONIT"]).replace(",",""))
 
 console.log(url.split("/"))
 
+console.log(name.valueOf())
+
 
