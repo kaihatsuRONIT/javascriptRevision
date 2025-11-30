@@ -1,6 +1,5 @@
 //singleton object
-// Object.create()
-
+// const my_object = new Object({})
 
 //object literal
 const keySym = Symbol("0");
