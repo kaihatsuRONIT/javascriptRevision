@@ -21,4 +21,7 @@ console.log(url.split("/"))
 
 console.log(name.valueOf())
 
+const str = "hello world"
+console.log(str[3]); //can access any char through index
+
 
