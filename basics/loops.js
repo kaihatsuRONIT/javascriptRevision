@@ -4,6 +4,7 @@ const arr = "hello"
 // }
 
 //high order loops
+
 //***for of***
 
 const supes = ["superman","vecna","will","eleven"]
@@ -12,6 +13,7 @@ for(const num of supes){  //works on arrays,strings,maps and gets their stored v
 }
 
 //***for in ****
+
 const numbers = {one : "1", two:"2", three:"3"}
 for(const key in numbers) { //gives indexes in objects,arrays,strings but not on maps
     console.log(`index is ${key} and value is ${numbers[key]}`); //do not access with .key as it will give undefined
@@ -30,4 +32,29 @@ for(const [a,b] of map) {
     //if written with [], as [a,b] then get 'a' as key and 'b' as value
     console.log(`key is ${a} and value is ${b}`);
 }
+
+//***for each***
+
+const gta = ["vice city","los santos", "san andreas", "chinatown", "liberty city"]
+// first way
+// gta.forEach(function(cities){
+//     console.log(cities); 
+// })
+
+//second way
+// gta.forEach((cities)=>{
+//     console.log(cities)
+// })
+
+//third way
+// function city(values){
+//     console.log(values);
+// }
+// gta.forEach(city)  //pass only reference
+
+gta.forEach((values,index,my_arr)=>{  //we get values,indices and complete array access
+    console.log(index,values,my_arr)
+})
+
+
 
