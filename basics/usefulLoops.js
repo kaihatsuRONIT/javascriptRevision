@@ -21,4 +21,16 @@ console.log(highlyRated)  //filter out the conditioned values
 
 console.log([1,2,3,4,5,6,7,8,9,10].map( (item) => item + 10)) //returns full array every time
 
+//reduce is used to do some calc in array and reduce it to value
+const shoppingCart = [
+    {item:"vegetables", price:"286"},
+    {item:"choclates", price:"78"},
+    {item:"groceries", price:"496"},
+    {item:"toys", price:"1194"},
+]
+console.log(shoppingCart.map((items)=> items.price = (Number)(items.price)).reduce((acc,item) => acc+item , 0)) // chaining of loops
+console.log(shoppingCart.reduce((acc,items)=>{
+    return acc+(Number)(items.price)  //usual way
+},0))
+
 
