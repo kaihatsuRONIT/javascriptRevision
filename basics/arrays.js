@@ -22,7 +22,7 @@ console.log([...my_arr,...my_arr_2]) //concat method can only use one array or a
 console.log(my_arr_3.flat(Infinity)) //flattens the array but give actual depth only
 
 console.log(Array.isArray("GITHUB")) //return T/F
-console.log(Array.from("12345678")); //converts to array(important) note: this will not convert number to individual digit array
+console.log(Array.from("12345678")); //converts to array(important) note: this will not convert number to individual digit array, rather to strings
 console.log(Array.from({age:21})); //return [] as specific info is not given about which parameter to be used to create array
 
 console.log(Array.of(scoreA,scoreB,{name:"leetcode"},my_arr)) //whatever you pass stored as it is in array(whether object,string,array etc)
