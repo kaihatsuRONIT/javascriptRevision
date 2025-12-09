@@ -24,25 +24,24 @@
         <h3 id="fifth" class="firstGroup">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus!
         </h3>
     </div>
-    <script>
-        //innerHTML : gives entire HTML written inside target id or class
-        //innerText : gives text inside the target id (note:- text hidden by any css property will not be shown i.e only text present on webpage will be showed)
-        //innerContent : gives entire all the text including innerText and hidden text
-
-        console.log(document.getElementById("head")) //gives single element(only first id is unique, else give first occuring element with that id)
-        console.log(document.getElementsByClassName("firstGroup")) //gives html collection
-        document.getElementById("third").setAttribute("style","color: red") //adds new attribute or overwrite already present attributes
-        console.log(document.getElementById("third").getAttribute("class")) //if present return string else null
-        
-        console.log(document.querySelector("#head")) //gives first elem of .class or @id
-        console.log(document.querySelectorAll(".firstGroup")) //gives nodelist  (can use forEach to iterate), have some properties of array including access to forEach
-
-        //for html collections line:29
-        const htmlCollectionArray = Array.from(document.getElementsByClassName("firstGroup")) //through this we get array consisting of all the elements
-        console.log(htmlCollectionArray.map((item)=> item.getAttribute("id"))) //this is an example of what we can do with this
-        
-    </script>
 </body>
+<script>
+    //innerHTML : gives entire HTML written inside target id or class
+    //innerText : gives text inside the target id (note:- text hidden by any css property will not be shown i.e only text present on webpage will be showed)
+    //innerContent : gives entire all the text including innerText and hidden text
 
+    console.log(document.getElementById("head")) //gives single element(only first id is unique, else give first occuring element with that id)
+    console.log(document.getElementsByClassName("firstGroup")) //gives html collection , have some properties of array
+    document.getElementById("third").setAttribute("style", "color: red") //adds new attribute or overwrite already present attributes
+    console.log(document.getElementById("third").getAttribute("class")) //if present return string else null
+
+    console.log(document.querySelector("#head")) //gives first elem of .class or @id
+    console.log(document.querySelectorAll(".firstGroup")) //gives nodelist  (can use forEach to iterate), have some properties of array including access to forEach
+
+    //for html collections line:29
+    const htmlCollectionArray = Array.from(document.getElementsByClassName("firstGroup")) //through this we get array consisting of all the elements
+    console.log(htmlCollectionArray.map((item) => item.getAttribute("id"))) //this is an example of what we can do with this
+
+</script>
 
 </html>

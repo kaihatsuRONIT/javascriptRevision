@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: #212121 ; color:aliceblue">
+    <div class="week">
+        <h1 class="day">Monday</h1>
+        <h1 class="day">Tuesday</h1>
+        <h1 class="day">Wednesday</h1>
+        <h1 class="day">Thursday</h1>
+        <h1 class="day">Friday</h1>
+        <h1 class="day">Saturday</h1>
+        <h1 class="day">Sunday</h1>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector(".week")
+    console.log(parent.children) //this gives HTMLcollection
+    console.log(parent.childNodes) //this gives all the nodes (div, text, space etc)
+    // for(let i = 0;i<parent.children.length;i++){
+    //     const child = parent.children[i];
+    //     if(i%2 == 0){
+    //         child.style.color = "green";
+    //     }
+    //     else{
+    //         child.style.color = "red"
+    //     }
+    // }
+    console.log(parent.firstElementChild) //gives first element
+    console.log(parent.lastElementChild) //gives last element
+    console.log(parent.nextElementSibling) //gives next element of any element
+</script>
+
+</html>
