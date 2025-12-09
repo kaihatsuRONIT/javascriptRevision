@@ -12,7 +12,10 @@
     const elem = document.createElement("div")
     const childElem = document.createElement("h1") //create any elem but not adding it to body
     elem.appendChild(childElem) //adding any child inside of parent
-    childElem.style.color = "black"
+    // childElem.id = "001"  //.id,.style,.innerText directly overwrites the value
+    childElem.setAttribute("id","001") //this directly sets value with going to the element reducing time complexity
+    childElem.className = "first"
+    childElem.style.color = "black" 
     childElem.style.backgroundColor = "green"
     childElem.style.padding = "10px"
     childElem.style.margin = "20%"
