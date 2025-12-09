@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: aliceblue;">
+    
+</body>
+<script>
+    const elem = document.createElement("div")
+    const childElem = document.createElement("h1") //create any elem but not adding it to body
+    elem.appendChild(childElem) //adding any child inside of parent
+    childElem.style.color = "black"
+    childElem.style.backgroundColor = "green"
+    childElem.style.padding = "10px"
+    childElem.style.margin = "20%"
+    //adding text below in two ways
+    childElem.innerText = "hello world" 
+    //OR
+    const text = document.createTextNode(" hello world")
+    childElem.appendChild(text);
+
+    document.body.appendChild(elem)
+    
+</script>
+</html>
