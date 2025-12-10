@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="head">
+        <li class="subhead">Javascript</li>
+    </ul>
+</body>
+<script>
+    //create
+    let count = 0;
+    function addLi(value) {
+        const li = document.createElement("li");
+        li.appendChild(document.createTextNode(`${value}`)) 
+        li.setAttribute("id",`${++count}`)
+        // li.innerText = `${value}`  //can also use .innerHTML
+        document.querySelector(".head").appendChild(li)
+    }
+    addLi("python")
+    addLi("Java") 
+
+    //edit
+    const li = document.querySelector("li:nth-child(2)")
+    // const li = document.querySelector("li:first-child")  //different ways to select
+    // const li = document.querySelector("li:last-child")
+
+    //li.innerHTML = "mojo" //first way
+
+    const newLi = document.createElement("li")
+    newLi.textContent = "Mojo"     //second way
+    li.replaceWith(newLi);
+
+    // li.outerHTML = "<li>Mojo</li>"  //third way 
+
+    //remove
+    const remli = document.querySelector("li:last-child")
+    remli.remove()
+
+</script>
+</html>
