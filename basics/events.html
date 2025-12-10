@@ -1,31 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events</title>
 </head>
+
 <body style="background-color: #212121; color: wheat;">
-    <h2>
-        Learn About Events
-    </h2>
-    <div id="one" style="background-color: aqua; height: 100px; width: 100px;"></div>
-    <div id="two" style="background-color: blueviolet; height: 100px; width: 100px;" onclick="alert('welcome to 2nd')"></div>
-    <div id="three" style="background-color: burlywood; height: 100px; width: 100px;"></div>
-    <div id="four" style="background-color: chartreuse; height: 100px; width: 100px;"></div>
-    <div id="five" style="background-color: cadetblue; height: 100px; width: 100px;"></div>
+    <div id="head">
+        <h2>
+            Learn About Events
+        </h2>
+        <div id="one" style="background-color: aqua; height: 100px; width: 100px;"></div>
+        <div id="two" style="background-color: blueviolet; height: 100px; width: 100px;"
+            onclick="alert('welcome to 2nd')"></div>
+        <div id="three" style="background-color: burlywood; height: 100px; width: 100px;"></div>
+        <div id="four" style="background-color: chartreuse; height: 100px; width: 100px;"></div>
+        <div id="five" style="background-color: cadetblue; height: 100px; width: 100px;"></div>
+    </div>
 </body>
 <script>
     //there are three ways
     // first is to just add onclick (as done in 2nd)
     //second is to use onclick on element like below
-    document.getElementById("four").onclick = function(){
+    document.getElementById("four").onclick = function () {
         alert("welcome to 4th")
     }
     //third method (best so far as addEventListener is powerful)
-    document.getElementById("three").addEventListener("click",function(){
+    document.getElementById("three").addEventListener("click", function (e) {
+        console.log(e);
         alert("welcom to 3rd")
     })
 
+    //learn about following things in event object
+    //type, timestamp , defaultPrevented
+    //target, toElement, srcElement, currentTarget
+    // clientX, clientY, screenX, screenY, Offset
+    //altKey,ctrlKey,shiftKey,keyCodes
+
+    document.getElementById("head").addEventListener("click" , function(e){
+        console.log("head is clicked")
+    })
+    document.getElementById("five").addEventListener("click" , function(e){
+        console.log("fifth is clicked")
+        e.preventDefault()
+        e.stopPropagation()
+    })
+    //event bubbling : by default, third parameter is false which cause events to flow like bubble i.e from target to above level
+    //event capturing : if third param is true, the above will happen in reverse direction i.e from top to target
+    // we can stop any event's propagation by e.stopPropagation()
+
 </script>
+
 </html>
