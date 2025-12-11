@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Press start to change colors.</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+</body>
+<script>
+    function colorGenerator() {
+        let ans = "#"
+        const colors = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
+        for (let i = 1; i <= 6; i++) {
+            const index = Math.floor(Math.random() * 16);
+            ans += colors[index];
+        }
+        return ans;
+    }
+    let changer;
+    document.getElementById('start').addEventListener("click", () => {
+        changer = setInterval(function () {
+            const color = colorGenerator();
+                console.log(color)
+            document.body.style.backgroundColor = color
+        }, 1000)
+    })
+    document.getElementById("stop").addEventListener("click", () => {
+        clearInterval(changer);
+    })
+</script>
+
+</html>
