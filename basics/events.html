@@ -12,12 +12,24 @@
         <h2>
             Learn About Events
         </h2>
-        <div id="one" style="background-color: aqua; height: 100px; width: 100px;"></div>
-        <div id="two" style="background-color: blueviolet; height: 100px; width: 100px;"
-            onclick="alert('welcome to 2nd')"></div>
-        <div id="three" style="background-color: burlywood; height: 100px; width: 100px;"></div>
-        <div id="four" style="background-color: chartreuse; height: 100px; width: 100px;"></div>
-        <div id="five" style="background-color: cadetblue; height: 100px; width: 100px;"></div>
+        <ul id="divs">
+            <li>
+                <div id="one" style="background-color: aqua; height: 100px; width: 100px;"></div>
+            </li>
+            <li>
+                <div id="two" style="background-color: blueviolet; height: 100px; width: 100px;"
+                    onclick="alert('welcome to 2nd')"></div>
+            </li>
+            <li>
+                <div id="three" style="background-color: burlywood; height: 100px; width: 100px;"></div>
+            </li>
+            <li>
+                <div id="four" style="background-color: chartreuse; height: 100px; width: 100px;"></div>
+            </li>
+            <li>
+                <div id="five" style="background-color: cadetblue; height: 100px; width: 100px;"></div>
+            </li>
+        </ul>
     </div>
 </body>
 <script>
@@ -25,12 +37,12 @@
     // first is to just add onclick (as done in 2nd)
     //second is to use onclick on element like below
     document.getElementById("four").onclick = function () {
-        alert("welcome to 4th")
+        // alert("welcome to 4th")
     }
     //third method (best so far as addEventListener is powerful)
     document.getElementById("three").addEventListener("click", function (e) {
         console.log(e);
-        alert("welcom to 3rd")
+        // alert("welcom to 3rd")
     })
 
     //learn about following things in event object
@@ -39,17 +51,25 @@
     // clientX, clientY, screenX, screenY, Offset
     //altKey,ctrlKey,shiftKey,keyCodes
 
-    document.getElementById("head").addEventListener("click" , function(e){
+    document.getElementById("head").addEventListener("click", function (e) {
         console.log("head is clicked")
     })
-    document.getElementById("five").addEventListener("click" , function(e){
+    document.getElementById("five").addEventListener("click", function (e) {
         console.log("fifth is clicked")
         e.preventDefault()
-        e.stopPropagation()
+        // e.stopPropagation()
     })
     //event bubbling : by default, third parameter is false which cause events to flow like bubble i.e from target to above level
     //event capturing : if third param is true, the above will happen in reverse direction i.e from top to target
     // we can stop any event's propagation by e.stopPropagation()
+
+    document.querySelector("#divs").addEventListener("click", (e)=>{
+        if(e.target.tagName == "LI") {
+            return;
+        }
+        const parent = e.target.parentNode; //used parent node to delete the li itself so that LI doesnt remove after removing the div or img
+        parent.remove()
+    })
 
 </script>
 
