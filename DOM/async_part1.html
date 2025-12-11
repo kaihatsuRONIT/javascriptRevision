@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Practicing javascript with setTimeout</h1>
+    <button id="stop">stop</button>
+
+    <h1>Practicing javascript with setInterval</h1>
+    <button id="start">start</button>
+    <button id="end">stop</button>
+</body>
+<script>
+    function changeText() {
+        const newh1 = document.createElement("h1")
+        newh1.appendChild(document.createTextNode("this text is hijacked"))
+        document.querySelector("h1").replaceWith(newh1)
+    }
+    const hijacker = setTimeout(changeText, 3000);  //setTimeout will run even if it is stored in variable. we can pass function or its reference
+    document.querySelector("#stop").addEventListener("click", () => {
+        clearTimeout(hijacker);  //pass the reference of setTimeout to the clearTime out function
+    })
+
+    let newHijacker;
+    document.getElementById("start").addEventListener("click", () => {
+        newHijacker = setInterval((str) => {
+            const todayDate = new Date();
+            console.log(`${str} ${todayDate.toLocaleTimeString()}`)
+        }, 500, "Hello, Current time is")
+    })
+    document.getElementById("end").addEventListener("click",()=>{
+        clearInterval(newHijacker);
+    })
+
+
+</script>
+
+</html>

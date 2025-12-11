@@ -7,4 +7,4 @@ const currDate = new Date();
 
 // isoString and Json are same
 
-console.log(currDate.getSeconds()) //gives effect of both toLocalDateString and toLocaleTimeString
+console.log(currDate.toLocaleString()) //gives effect of both toLocalDateString and toLocaleTimeString
