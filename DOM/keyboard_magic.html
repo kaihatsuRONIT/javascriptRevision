@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table style="margin-top: 12.5%; margin-left: 50%; font-size: larger;">
+        <tr>
+            <th>Key</th>
+            <th>keycode</th>
+            <th>code</th>
+        </tr>
+        <tr id="tar">
+            <th id="key">12345</th>
+            <th id="keyCode">123</th>
+            <th id="code">heiv</th>
+        </tr>
+    </table>
+</body>
+<script>
+    window.addEventListener("keypress",(e)=>{  //use window instead of document
+        console.log(e)
+        document.querySelector("#key").innerHTML = `${e.key === " " ? "space" : e.key}`
+        document.querySelector("#keyCode").innerHTML = `${e.keyCode}`
+        document.querySelector("#code").innerHTML = `${e.code}`
+    })
+</script>
+
+</html>
